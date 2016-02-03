@@ -4,6 +4,7 @@ angular.module(NgAppName, [
 	'ui.bootstrap',
 	'ngAnimate',
 	'angular.filter',
+	'angularFileUpload'
 ])
 	.config(['$routeProvider',
 		function($routeProvider) {
