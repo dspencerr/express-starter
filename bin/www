@@ -3,9 +3,13 @@
 var app = require('../app');
 var log = require('./logging');
 var params = require('./params');
+var version = require('./version');
+var pipes = require('./pipes');
+
 //var favicon = require('./favicon');
 var views = require('./views');
 var statik = require('./static');
+
 var routes = require('./routes');
 var errors = require('./errors');
 var server = require('./server');

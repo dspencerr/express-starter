@@ -6,8 +6,8 @@ angular.module(NgAppName)
 	]
 )
 .controller('ctrlAddAttachment', [
-	'$scope', '$routeParams', '$window', 'FileUploader', 'Attachment',
-	function ($scope, $routeParams, $window, FileUploader, Attachment) {
+	'$scope', '$routeParams', '$window', 'FileUploader',
+	function ($scope, $routeParams, $window, FileUploader) {
 
 		var id = $routeParams.Id;
 		$scope.Name = $routeParams.Name;
@@ -20,15 +20,15 @@ angular.module(NgAppName)
 			$window.history.back();
 		};
 
-		$scope.attachments = Attachment.find({
-			limit: 1000,
-			skip: 0,
-			fields: ['Id', 'Name', 'Body', 'BodyLength', 'ContentType'],
-			where: {
-				IsDeleted: false,
-				ParentId: $routeParams.Id
-			}
-		});
+		//$scope.attachments = Attachment.find({
+		//	limit: 1000,
+		//	skip: 0,
+		//	fields: ['Id', 'Name', 'Body', 'BodyLength', 'ContentType'],
+		//	where: {
+		//		IsDeleted: false,
+		//		ParentId: $routeParams.Id
+		//	}
+		//});
 
 
 	}]);
