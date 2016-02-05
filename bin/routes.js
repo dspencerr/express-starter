@@ -12,4 +12,4 @@ app.use('/', routes);
 
 var users = require('../routes/user');
 app.use('/user', users);
-app.use('/users', sendData);
+app.use('/user', sendData);

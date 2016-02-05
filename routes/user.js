@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var apiPipe = require('../services/routeApi');
+var routeApi = require('../services/routeApi');
 
-router.route('/').get(req.apiPipe('find'));
-
-
+router.route('/').get(routeApi('find'));
 
 module.exports = router;
