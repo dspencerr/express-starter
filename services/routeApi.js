@@ -1,4 +1,3 @@
-
 module.exports = routeApi;
 
 function routeApi(path){

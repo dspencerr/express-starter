@@ -3,7 +3,6 @@ angular.module(NgAppName, [
 	'ngResource',
 	'ui.bootstrap',
 	'ngAnimate',
-	'angular.filter',
 	'angularFileUpload'
 ])
 	.config(['$routeProvider',

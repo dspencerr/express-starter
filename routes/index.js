@@ -1,10 +1,24 @@
+var app = require('../app');
 var express = require('express');
 var router = express.Router();
 
+
+
+var title = require('../services/ejs-data/title');
+app.use(title);
+
+var cssLinks = require('../services/ejs-data/cssLinks');
+app.use(cssLinks);
+
+var scriptTags = require('../services/ejs-data/scriptTags');
+app.use(scriptTags);
+
+var templates = require('../services/ejs-data/templates');
+app.use(templates);
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  //res.send("What are we doing");
-  res.render('index', { title: 'Express' });
+  res.render('index', req.ejsData);
 });
 
 module.exports = router;
