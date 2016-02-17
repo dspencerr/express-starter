@@ -1,34 +1,33 @@
 angular.module(NgAppName)
-	.controller('PrimaryController', ['$scope',
-		function ($scope) {
+	.controller('PrimaryController', ['$scope', '$location', '$http',
+		function ($scope, $location, $http) {
+
+
+			$scope.current = {}
+			$scope.current.page = $location.$$path.slice(1, 50);
+
+
+			$scope.processDocs = function () {
+				$.notify({
+					message: "Please wait for a confirmation processing is done prior to running commissions.",
+					icon: 'glyphicon glyphicon-info-sign'
+				}, {type: 'info'});
+				$http.get('/commissions/process')
+					.then(function (res) {
+						$.notify({
+							message: "Docs where processed successfully",
+							icon: 'glyphicon glyphicon-ok'
+						}, {type: 'success'});
+					}, function (err) {
+						$.notify({
+							message: "There was an error when processing the docs.",
+							icon: 'glyphicon glyphicon-warning-sign'
+						}, {type: 'warning'});
+						console.log(err);
+					})
+
+			}
 
 		}
 	]
-)
-.controller('ctrlAddAttachment', [
-	'$scope', '$routeParams', '$window', 'FileUploader',
-	function ($scope, $routeParams, $window, FileUploader) {
-
-		var id = $routeParams.Id;
-		$scope.Name = $routeParams.Name;
-
-		$scope.uploader = new FileUploader({
-			url: '/sf/attachment/upload/' + id
-		});
-
-		$scope.done = function(){
-			$window.history.back();
-		};
-
-		//$scope.attachments = Attachment.find({
-		//	limit: 1000,
-		//	skip: 0,
-		//	fields: ['Id', 'Name', 'Body', 'BodyLength', 'ContentType'],
-		//	where: {
-		//		IsDeleted: false,
-		//		ParentId: $routeParams.Id
-		//	}
-		//});
-
-
-	}]);
+);

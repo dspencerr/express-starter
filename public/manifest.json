@@ -30,7 +30,8 @@
         ],
         "file_list":[
             "/js/app.js",
-            "/js/primaryController.js"
+            "/js/primaryController.js",
+            "/js/uploadController.js"
         ],
         "production":[
             "/prod/libraries.js",

@@ -13,3 +13,8 @@ app.use('/', routes);
 var users = require('../routes/user');
 app.use('/user', users);
 app.use('/user', sendData);
+
+
+var commissions = require('../routes/commissions');
+app.use('/commissions', commissions);
+app.use('/commissions', sendData);

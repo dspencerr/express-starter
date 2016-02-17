@@ -21,4 +21,16 @@ router.get('/', function(req, res, next) {
   res.render('index', req.ejsData);
 });
 
+router.get('/data', function(req, res, next) {
+	res.render('index', req.ejsData);
+});
+
+router.get('/payments', function(req, res, next) {
+	res.render('index', req.ejsData);
+});
+
+router.get('/history', function(req, res, next) {
+	res.render('index', req.ejsData);
+});
+
 module.exports = router;
